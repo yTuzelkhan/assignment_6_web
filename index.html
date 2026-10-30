@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment #6 - jQuery Portfolio</title>
-    <!-- Task 0: jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         body {
@@ -87,7 +86,7 @@
 
         .gallery img {
             width: 140px;
-            height: 100px;
+            height: 140px;
             object-fit: cover;
             border-radius: 4px;
         }
@@ -115,8 +114,6 @@
 </head>
 <body>
     <div class="container">
-
-        <!-- Part 1: Selectors & CSS -->
         <div class="card" id="profileCard">
             <h1 id="mainTitle">Welcome to My Portfolio</h1>
             <p id="authorName">Yermek Tuzelkhan</p>
@@ -128,11 +125,9 @@
             <button id="darkThemeBtn" class="btn-theme">Dark Theme</button>
         </div>
 
-        <!-- Part 2: jQuery Effects (Visibility, Fade, Slide) -->
         <div class="card">
             <h2>Part 2: About Me & Effects</h2>
             
-            <!-- Task 2: Visibility -->
             <p><strong>Bio:</strong> Undergraduate CS student exploring software engineering and AI.</p>
             <p id="statusMsg"><strong>Status:</strong> Currently learning jQuery!</p>
             <ul id="funFacts">
@@ -147,11 +142,10 @@
 
             <hr style="margin: 15px 0;">
 
-            <!-- Task 3: Fade Methods -->
             <h3>Image Gallery</h3>
             <div class="gallery">
-                <img id="img1" src="https://placehold.co/140x100/007bff/ffffff?text=Project+1" alt="Project 1">
-                <img id="img2" src="https://placehold.co/140x100/28a745/ffffff?text=Project+2" alt="Project 2">
+                <img id="img1" src="CHATGPT.png" alt="Project 1">
+                <img id="img2" src="github.png" alt="Project 2">
             </div>
             <div style="margin-top: 8px;">
                 <button id="fadeOutBtn">Fade Out</button>
@@ -161,10 +155,9 @@
 
             <hr style="margin: 15px 0;">
 
-            <!-- Task 4: Slide Methods -->
             <h3>Collapsible Panels</h3>
             <div class="accordion-header">My Favorite Music</div>
-            <div class="accordion-panel">I enjoy listening to rock, pop, and instrumental soundtracks while coding.</div>
+            <div class="accordion-panel">I enjoy listening to pop and instrumental soundtracks while coding.</div>
 
             <div class="accordion-header">My Favorite Movie</div>
             <div class="accordion-panel">Sci-Fi and drama films like Inception and Interstellar.</div>
@@ -173,11 +166,9 @@
             <div class="accordion-panel">Data Structures, Algorithms, and Operating Systems.</div>
         </div>
 
-        <!-- Part 3: DOM Manipulation with jQuery -->
         <div class="card">
             <h2>Part 3: DOM Manipulation</h2>
 
-            <!-- Task 5: Add & Remove Elements -->
             <h3>Skills List</h3>
             <input type="text" id="skillInput" placeholder="Enter a technical skill">
             <div>
@@ -194,14 +185,12 @@
 
             <hr style="margin: 15px 0;">
 
-            <!-- Task 6: Modifying Attributes -->
             <h3>External Link Attribute</h3>
             <p>Visit profile: <a id="socialLink" href="https://github.com/yTuzelkhan" target="_blank">GitHub Profile</a></p>
             <button id="changeLinkBtn">Change Link Target</button>
 
             <hr style="margin: 15px 0;">
 
-            <!-- Task 7: Form Interaction -->
             <h3>Live Form Interaction</h3>
             <form id="userForm" onsubmit="return false;">
                 <label for="formName">Name:</label>
@@ -216,7 +205,6 @@
             </div>
         </div>
 
-        <!-- Part 4: Animations -->
         <div class="card">
             <h2>Part 4: Skill Bar Animations</h2>
             <button id="animateSkillsBtn">Animate My Skills</button>
@@ -239,13 +227,10 @@
 
     </div>
 
-    <!-- Task 0: jQuery Document Ready -->
     <script>
         $(document).ready(function() {
-            // Task 0: Ready test log
             console.log("jQuery is ready!");
 
-            // Task 1: Selectors & CSS & Theme Switching
             $("#updateHeadlineBtn").click(function() {
                 $("#headline").text("Updated: Software & AI Developer").css("color", "#007bff");
             });
@@ -264,7 +249,6 @@
                 $(".accordion-panel").css({"background-color": "#f8f9fa", "border-color": "#e9ecef"});
             });
 
-            // Task 2: Visibility Methods
             $("#hideStatusBtn").click(function() {
                 $("#statusMsg, #funFacts").hide();
             });
@@ -277,7 +261,6 @@
                 $("#statusMsg, #funFacts").toggle();
             });
 
-            // Task 3: Fade Methods
             $("#fadeOutBtn").click(function() {
                 $("#img1, #img2").fadeOut();
             });
@@ -290,12 +273,10 @@
                 $("#img1, #img2").fadeToggle();
             });
 
-            // Task 4: Slide Methods
             $(".accordion-header").click(function() {
                 $(this).next(".accordion-panel").slideToggle();
             });
 
-            // Task 5: Add & Remove Elements
             $("#addSkillBtn").click(function() {
                 const skillText = $("#skillInput").val().trim();
                 if (skillText !== "") {
@@ -316,7 +297,6 @@
                 $("#skillsList li:last-child").remove();
             });
 
-            // Task 6: Modifying Attributes
             let linkToggled = false;
             $("#changeLinkBtn").click(function() {
                 if (!linkToggled) {
@@ -328,7 +308,6 @@
                 }
             });
 
-            // Task 7: Form Interaction
             $("#formName").on("input", function() {
                 const val = $(this).val();
                 $("#liveName").text(val !== "" ? val : "-");
@@ -339,7 +318,6 @@
                 $("#liveEmail").text(val !== "" ? val : "-");
             });
 
-            // Task 8: Skill Bar Animations
             let isAnimated = false;
             $("#animateSkillsBtn").click(function() {
                 if (!isAnimated) {
