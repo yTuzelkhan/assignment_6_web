@@ -2,8 +2,8 @@
 
 **Student Name:** Yermek Tuzelkhan  
 **Group:** IT-2513  
-**GitHub Repository:** [https://github.com/yTuzelkhan/assignment6](https://github.com/yTuzelkhan/assignment6)  
-**GitHub Pages Link:** [https://yTuzelkhan.github.io/assignment6/](https://yTuzelkhan.github.io/assignment6/)  
+**GitHub Repository:** https://github.com/yTuzelkhan/assignment_6_web 
+**GitHub Pages Link:** https://ytuzelkhan.github.io/assignment_6_web/
 
 ---
 
@@ -14,7 +14,10 @@
 * **Task 1: Selectors & CSS:** Created portfolio header sections, dynamically modified text content using `.text()`, changed CSS attributes via `.css()`, and implemented light/dark theme toggle functions.
 
 #### Screenshot - Part 1
-![Part 1 Screenshot](./screenshots/part1.png)
+<img width="1183" height="362" alt="изображение" src="https://github.com/user-attachments/assets/0bea44af-600c-44ed-a622-dc8ae5575b6d" />
+<img width="1355" height="312" alt="изображение" src="https://github.com/user-attachments/assets/6dfab339-77a3-4360-b312-5ab0605d2119" />
+<img width="1305" height="544" alt="изображение" src="https://github.com/user-attachments/assets/db0efac7-3d4d-48fb-bc71-7682c803bab5" />
+
 
 ---
 
@@ -24,7 +27,10 @@
 * **Task 4: Slide Methods:** Implemented collapsible panels for favorite music, movies, and subjects using `.slideToggle()`.
 
 #### Screenshot - Part 2
-![Part 2 Screenshot](./screenshots/part2.png)
+<img width="1278" height="717" alt="изображение" src="https://github.com/user-attachments/assets/2ecf9eb3-2aac-4a91-89e7-8334bb299cc8" />
+<img width="1292" height="276" alt="изображение" src="https://github.com/user-attachments/assets/5c629fd7-d330-4e9c-bac3-96e8549105f7" />
+<img width="1001" height="682" alt="изображение" src="https://github.com/user-attachments/assets/9975ce17-3554-41e7-a1a6-62ac68b2b624" />
+
 
 ---
 
@@ -34,7 +40,11 @@
 * **Task 7: Form Interaction:** Built live input fields updating corresponding text elements in real time via the `input` event listener, `.val()`, and `.text()`.
 
 #### Screenshot - Part 3
-![Part 3 Screenshot](./screenshots/part3.png)
+<img width="1392" height="594" alt="изображение" src="https://github.com/user-attachments/assets/425894ca-7ec5-421e-b8da-558033738b92" />
+<img width="1482" height="343" alt="изображение" src="https://github.com/user-attachments/assets/03a2d3f4-c019-49e4-bdf3-fee7260b7ced" />
+<img width="1449" height="750" alt="изображение" src="https://github.com/user-attachments/assets/c03e403a-4409-41c9-9215-1569d1b6063e" />
+<img width="1179" height="255" alt="изображение" src="https://github.com/user-attachments/assets/6c428607-e5ce-4e8b-856e-f9e962695090" />
+
 
 ---
 
@@ -42,7 +52,9 @@
 * **Task 8: Basic Animation:** Designed visual skill bars that smoothly animate their width from `0%` to target percentages (`90%`, `85%`, `80%`) and reset on toggle using `.animate()`.
 
 #### Screenshot - Part 4
-![Part 4 Screenshot](./screenshots/part4.png)
+<img width="1123" height="527" alt="изображение" src="https://github.com/user-attachments/assets/6f60fb95-615c-4029-9791-1476ce4e4a99" />
+<img width="1155" height="427" alt="изображение" src="https://github.com/user-attachments/assets/3e35a6b3-2545-49f7-86e4-aedd64950e23" />
+
 
 ---
 
