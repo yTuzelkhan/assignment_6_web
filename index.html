@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment #6 - jQuery Portfolio</title>
+    <!-- Task 0: jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            margin-top: 0;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 4px 2px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+        .btn-theme {
+            background-color: #6c757d;
+        }
+
+        input {
+            padding: 8px;
+            margin: 4px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .accordion-header {
+            background-color: #e9ecef;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .accordion-panel {
+            display: none;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-top: none;
+            margin-bottom: 8px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gallery img {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .skill-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin: 8px 0;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background-color: #28a745;
+            width: 0%;
+            color: white;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: right;
+            padding-right: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Part 1: Selectors & CSS -->
+        <div class="card" id="profileCard">
+            <h1 id="mainTitle">Welcome to My Portfolio</h1>
+            <p id="authorName">Yermek Tuzelkhan</p>
+            <p id="headline">Computer Science Student & Competitive Programmer</p>
+            <p class="intro">Welcome! This portfolio demonstrates jQuery DOM manipulation, effects, and animations.</p>
+            
+            <button id="updateHeadlineBtn">Update Headline</button>
+            <button id="lightThemeBtn" class="btn-theme">Light Theme</button>
+            <button id="darkThemeBtn" class="btn-theme">Dark Theme</button>
+        </div>
+
+        <!-- Part 2: jQuery Effects (Visibility, Fade, Slide) -->
+        <div class="card">
+            <h2>Part 2: About Me & Effects</h2>
+            
+            <!-- Task 2: Visibility -->
+            <p><strong>Bio:</strong> Undergraduate CS student exploring software engineering and AI.</p>
+            <p id="statusMsg"><strong>Status:</strong> Currently learning jQuery!</p>
+            <ul id="funFacts">
+                <li>Enthusiastic about C++ and competitive programming.</li>
+                <li>Plays football during leisure time.</li>
+            </ul>
+            <div>
+                <button id="hideStatusBtn">Hide Info</button>
+                <button id="showStatusBtn">Show Info</button>
+                <button id="toggleStatusBtn">Toggle Info</button>
+            </div>
+
+            <hr style="margin: 15px 0;">
+
+            <!-- Task 3: Fade Methods -->
+            <h3>Image Gallery</h3>
+            <div class="gallery">
+                <img id="img1" src="https://placehold.co/140x100/007bff/ffffff?text=Project+1" alt="Project 1">
+                <img id="img2" src="https://placehold.co/140x100/28a745/ffffff?text=Project+2" alt="Project 2">
+            </div>
+            <div style="margin-top: 8px;">
+                <button id="fadeOutBtn">Fade Out</button>
+                <button id="fadeInBtn">Fade In</button>
+                <button id="fadeToggleBtn">Fade Toggle</button>
+            </div>
+
+            <hr style="margin: 15px 0;">
+
+            <!-- Task 4: Slide Methods -->
+            <h3>Collapsible Panels</h3>
+            <div class="accordion-header">My Favorite Music</div>
+            <div class="accordion-panel">I enjoy listening to rock, pop, and instrumental soundtracks while coding.</div>
+
+            <div class="accordion-header">My Favorite Movie</div>
+            <div class="accordion-panel">Sci-Fi and drama films like Inception and Interstellar.</div>
+
+            <div class="accordion-header">My Favorite Subject</div>
+            <div class="accordion-panel">Data Structures, Algorithms, and Operating Systems.</div>
+        </div>
+
+        <!-- Part 3: DOM Manipulation with jQuery -->
+        <div class="card">
+            <h2>Part 3: DOM Manipulation</h2>
+
+            <!-- Task 5: Add & Remove Elements -->
+            <h3>Skills List</h3>
+            <input type="text" id="skillInput" placeholder="Enter a technical skill">
+            <div>
+                <button id="addSkillBtn">Add Skill</button>
+                <button id="prependSkillBtn">Prepend Skill</button>
+                <button id="removeSkillBtn" class="btn-danger">Remove Last Skill</button>
+            </div>
+            <ul id="skillsList">
+                <li>C++</li>
+                <li>Python</li>
+                <li>PyTorch</li>
+                <li>PostgreSQL</li>
+            </ul>
+
+            <hr style="margin: 15px 0;">
+
+            <!-- Task 6: Modifying Attributes -->
+            <h3>External Link Attribute</h3>
+            <p>Visit profile: <a id="socialLink" href="https://github.com/yTuzelkhan" target="_blank">GitHub Profile</a></p>
+            <button id="changeLinkBtn">Change Link Target</button>
+
+            <hr style="margin: 15px 0;">
+
+            <!-- Task 7: Form Interaction -->
+            <h3>Live Form Interaction</h3>
+            <form id="userForm" onsubmit="return false;">
+                <label for="formName">Name:</label>
+                <input type="text" id="formName" placeholder="Type your name">
+
+                <label for="formEmail">Email:</label>
+                <input type="email" id="formEmail" placeholder="Type your email">
+            </form>
+            <div style="margin-top: 10px;">
+                <p><strong>Live Name:</strong> <span id="liveName">-</span></p>
+                <p><strong>Live Email:</strong> <span id="liveEmail">-</span></p>
+            </div>
+        </div>
+
+        <!-- Part 4: Animations -->
+        <div class="card">
+            <h2>Part 4: Skill Bar Animations</h2>
+            <button id="animateSkillsBtn">Animate My Skills</button>
+
+            <p>C++</p>
+            <div class="skill-bar-container">
+                <div class="skill-bar" data-width="90%"></div>
+            </div>
+
+            <p>Python</p>
+            <div class="skill-bar-container">
+                <div class="skill-bar" data-width="85%"></div>
+            </div>
+
+            <p>Algorithms & DS</p>
+            <div class="skill-bar-container">
+                <div class="skill-bar" data-width="80%"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Task 0: jQuery Document Ready -->
+    <script>
+        $(document).ready(function() {
+            // Task 0: Ready test log
+            console.log("jQuery is ready!");
+
+            // Task 1: Selectors & CSS & Theme Switching
+            $("#updateHeadlineBtn").click(function() {
+                $("#headline").text("Updated: Software & AI Developer").css("color", "#007bff");
+            });
+
+            $("#darkThemeBtn").click(function() {
+                $("body").css({"background-color": "#1e1e2e", "color": "#cdd6f4"});
+                $(".card").css({"background-color": "#313244", "border-color": "#45475a"});
+                $(".accordion-header").css({"background-color": "#45475a", "color": "#ffffff"});
+                $(".accordion-panel").css({"background-color": "#313244", "border-color": "#45475a"});
+            });
+
+            $("#lightThemeBtn").click(function() {
+                $("body").css({"background-color": "#f4f4f9", "color": "#333333"});
+                $(".card").css({"background-color": "#ffffff", "border-color": "#dddddd"});
+                $(".accordion-header").css({"background-color": "#e9ecef", "color": "#000000"});
+                $(".accordion-panel").css({"background-color": "#f8f9fa", "border-color": "#e9ecef"});
+            });
+
+            // Task 2: Visibility Methods
+            $("#hideStatusBtn").click(function() {
+                $("#statusMsg, #funFacts").hide();
+            });
+
+            $("#showStatusBtn").click(function() {
+                $("#statusMsg, #funFacts").show();
+            });
+
+            $("#toggleStatusBtn").click(function() {
+                $("#statusMsg, #funFacts").toggle();
+            });
+
+            // Task 3: Fade Methods
+            $("#fadeOutBtn").click(function() {
+                $("#img1, #img2").fadeOut();
+            });
+
+            $("#fadeInBtn").click(function() {
+                $("#img1, #img2").fadeIn();
+            });
+
+            $("#fadeToggleBtn").click(function() {
+                $("#img1, #img2").fadeToggle();
+            });
+
+            // Task 4: Slide Methods
+            $(".accordion-header").click(function() {
+                $(this).next(".accordion-panel").slideToggle();
+            });
+
+            // Task 5: Add & Remove Elements
+            $("#addSkillBtn").click(function() {
+                const skillText = $("#skillInput").val().trim();
+                if (skillText !== "") {
+                    $("#skillsList").append("<li>" + skillText + "</li>");
+                    $("#skillInput").val("");
+                }
+            });
+
+            $("#prependSkillBtn").click(function() {
+                const skillText = $("#skillInput").val().trim();
+                if (skillText !== "") {
+                    $("#skillsList").prepend("<li>" + skillText + "</li>");
+                    $("#skillInput").val("");
+                }
+            });
+
+            $("#removeSkillBtn").click(function() {
+                $("#skillsList li:last-child").remove();
+            });
+
+            // Task 6: Modifying Attributes
+            let linkToggled = false;
+            $("#changeLinkBtn").click(function() {
+                if (!linkToggled) {
+                    $("#socialLink").attr("href", "https://codeforces.com/profile/Tuzelkhan").text("Codeforces Profile");
+                    linkToggled = true;
+                } else {
+                    $("#socialLink").attr("href", "https://github.com/yTuzelkhan").text("GitHub Profile");
+                    linkToggled = false;
+                }
+            });
+
+            // Task 7: Form Interaction
+            $("#formName").on("input", function() {
+                const val = $(this).val();
+                $("#liveName").text(val !== "" ? val : "-");
+            });
+
+            $("#formEmail").on("input", function() {
+                const val = $(this).val();
+                $("#liveEmail").text(val !== "" ? val : "-");
+            });
+
+            // Task 8: Skill Bar Animations
+            let isAnimated = false;
+            $("#animateSkillsBtn").click(function() {
+                if (!isAnimated) {
+                    $(".skill-bar").each(function() {
+                        const targetWidth = $(this).attr("data-width");
+                        $(this).animate({ width: targetWidth }, 1000).text(targetWidth);
+                    });
+                    isAnimated = true;
+                } else {
+                    $(".skill-bar").animate({ width: "0%" }, 1000).text("");
+                    isAnimated = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
